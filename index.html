@@ -87,8 +87,7 @@
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
     <img 
-      src="images/airconditionerrepair.jpg" 
-      alt="Technician repairing AC" 
+      src="images/airconditionerrepair.jpg"  
       class="w-full h-full object-cover"
     >
     <div class="absolute inset-0 hero-gradient"></div>
@@ -108,14 +107,11 @@
 
     <div class="max-w-4xl mx-auto mb-10 md:mb-12">
       <p class="text-2xl md:text-4xl font-bold text-gray-900 mb-5 leading-snug">
-        Same Day Service <span class="text-blue-700">GUARANTEED</span><br>
-        Or Labour is <span class="text-red-600">COMPLETELY FREE!</span>
-      </p>
+        Same Day Service <span class="text-blue-700"></span><br>
 
       <p class="text-lg md:text-2xl text-gray-800 font-medium">
-        Call before <span class="font-extrabold">12:00 Noon</span> (Monday – Friday)<br>
+        Call <span class="font-extrabold">09:30AM To 08:30PM</span> (Monday – Sunday)<br>
         And we will be at your door <span class="font-extrabold text-blue-700">TODAY</span>,
-        or our labour charge is <span class="font-extrabold text-red-600">FREE</span>
       </p>
     </div>
 
@@ -285,12 +281,40 @@
 <!-- ================= JAVASCRIPT ================= -->
 <script>
 function toggleMenu() {
-  document.getElementById("mobileMenu").classList.toggle("hidden");
+    const menu = document.getElementById("mobileMenu");
+    menu.classList.toggle("hidden");
 }
 
-function toggleServices() {
-  document.getElementById("serviceList").classList.toggle("hidden");
+function closeMenu() {
+    document.getElementById("mobileMenu").classList.add("hidden");
+    // Also close services submenu if open
+    document.getElementById("serviceList").classList.add("hidden");
 }
+
+function toggleServices(event) {
+    event.stopPropagation(); // Prevent closing whole menu when clicking Services
+    document.getElementById("serviceList").classList.toggle("hidden");
+}
+
+// Close menu when clicking any link
+document.addEventListener('DOMContentLoaded', function() {
+    const menuLinks = document.querySelectorAll('#mobileMenu a');
+    
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Only auto-close for actual navigation links (not the Services parent)
+            if (!this.parentElement.hasAttribute('onclick')) {
+                closeMenu();
+            }
+        });
+    });
+
+    // Also close when clicking Services submenu items
+    const serviceSubLinks = document.querySelectorAll('#serviceList a');
+    serviceSubLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+});
 </script>
 
 </body>
