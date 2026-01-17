@@ -48,10 +48,20 @@
 
 <!-- HEADER -->
 <header class="flex items-center justify-between p-4 border-b sticky top-0 bg-white shadow z-50">
-  <i class="fas fa-bars text-xl"></i>
-  <h1 class="font-bold text-base md:text-lg">Deepak Refrigerator & Electronics</h1>
-  <div class="flex gap-4">
-  </div>
+
+  <!-- EMPTY LEFT SPACE (keeps title centered) -->
+  <div class="w-6"></div>
+
+  <!-- TITLE -->
+  <h1 class="font-bold text-base md:text-lg text-center">
+    Deepak Refrigerator & Electronics
+  </h1>
+
+  <!-- MENU ICON (MOVED TO LAST) -->
+  <button onclick="toggleMenu()" class="text-xl">
+    <i class="fas fa-bars"></i>
+  </button>
+
 </header>
 
 <!-- HERO -->
