@@ -18,12 +18,12 @@
 <style>
   body {
     font-family: 'Poppins', sans-serif;
-    padding-bottom: 50px; /* IMPORTANT: space for bottom nav */
+    padding-bottom: 50px; /* Space for fixed bottom navigation */
   }
 
   .gold-theme {
     background: linear-gradient(90deg, #f59e0b, #facc15);
-    transition: all .3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   .gold-theme:hover {
@@ -35,10 +35,14 @@
   }
 
   .hero-gradient {
-    background: linear-gradient(to bottom, rgba(255,255,255,0.92), rgba(255,255,255,0.85) 40%, rgba(240,249,255,0.8));
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.85) 40%,
+      rgba(240, 249, 255, 0.8)
+    );
   }
 </style>
-</head>
 
 <body class="bg-white text-gray-800">
 
@@ -66,7 +70,7 @@
     <li><a href="#home" class="block px-6 py-4 text-orange-500 font-semibold">Home</a></li>
     <li><a href="#about" class="block px-6 py-4">About Us</a></li>
 
-    <li onclick="toggleServices()" class="px-6 py-4 flex justify-between items-center cursor-pointer">
+    <li onclick="toggleServices(event)" class="px-6 py-4 flex justify-between items-center cursor-pointer">
       <span class="text-orange-500 font-semibold">Services</span>
       <i class="fas fa-chevron-down"></i>
     </li>
