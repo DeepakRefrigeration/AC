@@ -47,17 +47,20 @@ body {
 
 <!-- ================= HEADER ================= -->
 <header class="flex items-center justify-between p-4 border-b sticky top-0 bg-white shadow z-50">
-  <button onclick="toggleMenu()" class="text-xl">
-    <i class="fas fa-ellipsis-v"></i>
-  </button>
 
-  <h1 class="font-bold text-base md:text-lg">
+  <!-- EMPTY LEFT (keeps title centered) -->
+  <div class="w-6"></div>
+
+  <!-- TITLE -->
+  <h1 class="font-bold text-base md:text-lg text-center">
     Deepak Refrigerator & Electronics
   </h1>
 
-  <a href="tel:+917220820343">
-    <i class="fas fa-phone text-xl text-gold"></i>
-  </a>
+  <!-- MENU ICON (RIGHT - THREE LINES) -->
+  <button onclick="toggleMenu()" class="text-xl">
+    <i class="fas fa-bars"></i>
+  </button>
+
 </header>
 
 <!-- ================= MOBILE MENU ================= -->
