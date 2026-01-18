@@ -14,8 +14,6 @@
 
 <!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 <style>
   body {
@@ -36,21 +34,6 @@
     color: #b8860b;
   }
 
-   /* Slider Styling */
-  .hero-slider { width: 100%; height: 70vh; }
-  
-  .slide-overlay {
-    background: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    inset: 0;
-  }
-
-  /* Hidden Arrows and Pagination as requested */
-  .swiper-button-next, .swiper-button-prev, .swiper-pagination {
-    display: none !important;
-  }
-  
-  
   .hero-gradient {
     background: linear-gradient(
       to bottom,
@@ -60,12 +43,11 @@
     );
   }
 </style>
-</head>
 
 <body class="bg-white text-gray-800">
 
 <!-- ================= HEADER ================= -->
-<header class="flex items-center justify-between p-4 border-b sticky top-0 bg-white shadow z-100">
+<header class="flex items-center justify-between p-4 border-b sticky top-0 bg-white shadow z-50">
 
   <!-- EMPTY LEFT -->
   <div class="w-6"></div>
@@ -83,7 +65,7 @@
 </header>
 
 <!-- ================= MOBILE MENU ================= -->
-<div id="mobileMenu" class="hidden fixed top-16 left-0 w-full bg-white shadow-lg z-100">
+<div id="mobileMenu" class="hidden fixed top-16 left-0 w-full bg-white shadow-lg z-50">
   <ul class="divide-y text-lg">
     <li><a href="#home" class="block px-6 py-4 text-orange-500 font-semibold">Home</a></li>
     <li><a href="#about" class="block px-6 py-4">About Us</a></li>
@@ -105,34 +87,20 @@
 </div>
 
 <!-- ==================== NEW HERO SECTION - ASSIMIMOX STYLE ==================== -->
-<section id="home" class="relative overflow-hidden">
-  <div class="swiper hero-slider">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide relative">
-        <img src="images/airconditionerrepair.jpg" class="w-full h-full object-cover">
-        <div class="slide-overlay flex items-center justify-center text-center">
-            <h2 class="text-white text-3xl md:text-5xl font-bold px-4">Expert AC Repair Services</h2>
-        </div>
-      </div>
-      <div class="swiper-slide relative">
-        <img src="images/washingmachine.jpg" class="w-full h-full object-cover">
-        <div class="slide-overlay flex items-center justify-center text-center">
-            <h2 class="text-white text-3xl md:text-5xl font-bold px-4">Washing Machine Specialists</h2>
-        </div>
-      </div>
-      <div class="swiper-slide relative">
-        <img src="images/refrigeratorrepair.jpg" class="w-full h-full object-cover">
-        <div class="slide-overlay flex items-center justify-center text-center">
-            <h2 class="text-white text-3xl md:text-5xl font-bold px-4">Refrigerator & RO Repair</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<section id="home" class="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center text-center px-5 py-16 md:py-24 overflow-hidden">
 
-<section class="relative text-center px-5 py-16 md:py-20 bg-gray-50 overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="images/airconditionerrepair.jpg"  
+      class="w-full h-full object-cover"
+    >
+    <div class="absolute inset-0 hero-gradient"></div>
+  </div>
+
+  <!-- Main Content -->
   <div class="relative z-10 max-w-5xl mx-auto w-full">
-    <div class="inline-block mb-6">
+    <div class="inline-block mb-5 md:mb-6">
       <span class="bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm md:text-base font-bold tracking-wider shadow-md">
         PROFESSIONAL APPLIANCE REPAIR
       </span>
