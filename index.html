@@ -167,19 +167,21 @@
 <!-- ================= MOBILE MENU ================= -->
 <div id="mobileMenu" class="hidden fixed top-[80px] left-0 w-full bg-white shadow-lg z-50">
   <ul class="divide-y text-lg">
-    <li><a href="#home" class="block px-6 py-4 text-orange-500 font-semibold">Home</a></li>
-    <li><a href="#about" class="block px-6 py-4">About Us</a></li>
+     <a href="#home" onclick="closeMenu()" class="block px-6 py-4 text-orange-500 font-semibold">
+  Home
+</a>
+    <li><a href="#about" onclick="closeMenu()" class="block px-6 py-4">About Us</a></li>
     <li onclick="toggleServices()" class="px-6 py-4 flex justify-between items-center cursor-pointer">
       <span class="text-orange-500 font-semibold">Services</span>
       <i class="fas fa-chevron-down"></i>
     </li>
-    <ul id="serviceList" class="hidden bg-gray-50">
+    <ul id="serviceList" onclick="closeMenu()" class="hidden bg-gray-50">
       <li><a href="#ac" class="block px-10 py-3 text-red-500">AC Repair</a></li>
       <li><a href="#microwave" class="block px-10 py-3 text-red-500">Microwave</a></li>
       <li><a href="#fridge" class="block px-10 py-3 text-red-500">Refrigerator Repair</a></li>
       <li><a href="#washing" class="block px-10 py-3 text-red-500">Washing Machine Repair</a></li>
     </ul>
-    <li><a href="#contact" class="block px-6 py-4">Contact Us</a></li>
+    <li><a href="#contact" onclick="closeMenu()" class="block px-6 py-4">Contact Us</a></li>
     
   </ul>
 </div>
@@ -388,11 +390,17 @@
 function toggleMenu() {
   document.getElementById("mobileMenu").classList.toggle("hidden");
 }
+
+// 👇 NEW FUNCTION
+function closeMenu() {
+  document.getElementById("mobileMenu").classList.add("hidden");
+}
+
 function toggleServices() {
   document.getElementById("serviceList").classList.toggle("hidden");
 }
 
-// Simple slider (no dots control needed)
+// Slider
 const slides = document.querySelectorAll('.slide');
 let current = 0;
 
