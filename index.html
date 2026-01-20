@@ -16,20 +16,24 @@
 
   <style>
   body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #fff;
-    min-height: 100%;
-    overflow-y: auto;
-    padding-bottom: 80px;
-  }
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #fff;
+  min-height: 100%;
+  overflow-y: auto;
+  padding-bottom: 40px;
+}
 
   .full-slider {
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
+  position: relative;
+  height: calc(100svh - 60px); /* header height minus */
+  width: 100%;
+  overflow: hidden;
+}
+  
+  section {
+  scroll-margin-top: 90px;
+}
 
   .slide {
     position: absolute;
@@ -53,12 +57,12 @@
   }
 
     .overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8));
-      display: flex;
-      flex-direction: column;
-    }
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.8));
+  display: flex;
+  flex-direction: column;
+}
 
     .header {
       position: fixed;
@@ -134,10 +138,19 @@
     .text-gold {
       color: #b8860b;
     }
+  
   </style>
 </head>
 
 <body class="bg-white text-gray-800">
+
+<!-- ===== FIXED HEADER (OUTSIDE SLIDER) ===== -->
+<div class="header">
+  <div class="logo-title">Deepak Shivlani</div>
+  <button onclick="toggleMenu()" class="menu-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+</div>
 
 <!-- ================= FULL-SCREEN SLIDING BACKGROUND ================= -->
 <div class="full-slider">
@@ -149,13 +162,6 @@
 
   <!-- Overlay -->
   <div class="overlay">
-    <!-- Header -->
-    <div class="header">
-      <div class="logo-title">Deepak Shivlani</div>
-      <button onclick="toggleMenu()" class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </button>
-    </div>
 
     <!-- Main text -->
     <div class="main-content">
